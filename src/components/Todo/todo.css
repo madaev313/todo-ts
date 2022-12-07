@@ -1,0 +1,15 @@
+.todo{
+    background: #DBE2EF;
+    border-radius: 5px;
+    padding: 2px 2px;
+    margin-bottom: 10px;
+}
+.todo__content{
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    align-items: center;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.34);
+}
+.todo pre{
+    display: inline;
+}

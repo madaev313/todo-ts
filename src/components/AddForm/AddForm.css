@@ -1,0 +1,20 @@
+.AddForm{
+    padding: 10px 0 0 0;
+    align-self: center;
+    width: 50%;
+    margin: auto;
+}
+
+.AddForm input{
+    background: #DBE2EF;
+    border: 1px solid rgba(177, 177, 177, 0.4);
+    border-radius: 5px 0 0 5px;
+    /*padding: 6px 2px;*/
+}
+.AddForm button{
+    background: #3F72AF;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    padding: 2px 8px;
+    color: white;
+}

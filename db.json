@@ -1,0 +1,44 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Поступить в UNICODE",
+      "completed": true,
+      "tags": [
+        "education",
+        "career"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Успешно окончить обучение, выполняя все рекомендации",
+      "completed": true,
+      "tags": [
+        "education",
+        "career"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Стать успешным и выскокоплачиваемым специалистом",
+      "completed": false,
+      "tags": [
+        "career",
+        "success"
+      ]
+    }
+  ],
+  "profile": {
+    "username": "Mago",
+    "profile_img": "https://static.1tv.ru/uploads/photo/image/2/huge/4062_huge_876c41f50e.jpg"
+  },
+  "tags": [
+    "education",
+    "career",
+    "achievement",
+    "chechen",
+    "success",
+    "pure-success",
+    "successful-success"
+  ]
+}
