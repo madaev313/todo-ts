@@ -10,7 +10,6 @@ interface ITodoProps {
 
 const Todo: FC<ITodoProps> = ({ todo }) => {
   const { updateTodo, deleteTodo } = useActions();
-
   const { id, tags, title, completed } = todo;
 
   return (
@@ -30,7 +29,7 @@ const Todo: FC<ITodoProps> = ({ todo }) => {
       </div>
       <div>
         {tags.map((tag) => (
-          <pre>{tag} </pre>
+          <pre>{tag}</pre>
         ))}
       </div>
     </div>

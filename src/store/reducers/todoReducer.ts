@@ -1,4 +1,11 @@
-import { ITodoState, TodoAction, TodosActionsTypes } from "../types/todo";
+import {
+  ChangeCheckboxAction,
+  DeleteTodoAction,
+  ITodoState,
+  NewTodoAction,
+  TodoAction,
+  TodosActionsTypes,
+} from "../types/todo";
 
 const initialState: ITodoState = {
   todos: [],
@@ -8,14 +15,18 @@ const initialState: ITodoState = {
 
 export const todoReducer = (
   state = initialState,
-  action: TodoAction
+  action: TodoAction | NewTodoAction | ChangeCheckboxAction | DeleteTodoAction
 ): ITodoState => {
   switch (action.type) {
-    case TodosActionsTypes.TODO_PENDING:
+    case TodosActionsTypes.FETCH_TODOS:
       return { ...state, loading: true };
-    case TodosActionsTypes.TODO_SUCCESS:
-      return { ...state, todos: action.payload };
-    case TodosActionsTypes.TODO_UPDATE:
+    case TodosActionsTypes.FETCH_TODOS_SUCCESS:
+      return { ...state, loading: false, error: null, todos: action.payload };
+    case TodosActionsTypes.FETCH_TODOS_ERROR:
+      return { ...state, loading: false, error: action.payload, todos: [] };
+    case TodosActionsTypes.FETCH_CHANGE_CHECKBOX:
+      return { ...state, loading: true, error: null };
+    case TodosActionsTypes.FETCH_CHANGE_CHECKBOX_SUCCESS:
       return {
         ...state,
         todos: state.todos.map((todo) =>
@@ -24,20 +35,20 @@ export const todoReducer = (
             : todo
         ),
       };
-    case TodosActionsTypes.TODO_ERROR:
-      return { ...state, loading: false, error: action.payload };
-    case TodosActionsTypes.TODO_PENDING:
+    case TodosActionsTypes.FETCH_CHANGE_CHECKBOX_ERROR:
+      return { ...state, loading: false, error: action.payload, todos: [] };
+    case TodosActionsTypes.FETCH_DELETE_TODOS:
       return { ...state, loading: true, error: null };
-    case TodosActionsTypes.TODO_DELETE:
+    case TodosActionsTypes.FETCH_DELETE_TODOS_SUCCESS:
       return {
         ...state,
         loading: false,
         error: null,
         todos: state.todos.filter((item) => item.id !== action.payload),
       };
-    case TodosActionsTypes.TODO_PENDING:
+    case TodosActionsTypes.FETCH_ADD_TODOS:
       return { ...state, loading: true, error: null };
-    case TodosActionsTypes.TODO_SUCCESS:
+    case TodosActionsTypes.FETCH_ADD_TODOS_SUCCESS:
       return {
         ...state,
         loading: false,

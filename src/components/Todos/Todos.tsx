@@ -5,7 +5,7 @@ import Todo from "../Todo/Todo";
 import "./todos.css";
 
 const Todos = () => {
-  const { todos, loading, error } = useTypedSelector((state) => state.todo);
+  const { todos } = useTypedSelector((state) => state.todo);
 
   return (
     <div className="todos">
